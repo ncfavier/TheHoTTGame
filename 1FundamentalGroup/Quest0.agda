@@ -26,6 +26,15 @@ doubleCover (loop i) = flipPath i
 true-loop-false : PathP (λ i → flipPath i) true false
 true-loop-false = transport-filler flipPath true
 
+base-true : Σ S¹ doubleCover
+base-true = base , true
+
+base-false : Σ S¹ doubleCover
+base-false = base , false
+
+true≡false-over-loop : base-true ≡ base-false
+true≡false-over-loop i = loop i , true-loop-false i
+
 endPtOfTrue : base ≡ base → doubleCover base
 endPtOfTrue p = endPt doubleCover p true
 
