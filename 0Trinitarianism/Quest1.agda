@@ -3,7 +3,9 @@ module 0Trinitarianism.Quest1 where
 open import 0Trinitarianism.Preambles.P1
 
 isEven : ℕ → Type
-isEven n = {!!}
+isEven zero = ⊤
+isEven (suc zero) = ⊥
+isEven (suc (suc n)) = isEven n
 
 {-
 This is a comment block.
